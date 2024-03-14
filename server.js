@@ -11,8 +11,11 @@ server.use(jsonServer.rewriter({
     '/blog/:resource/:id/show': '/:resource/:id'
 }))
 server.use(router)
-server.listen(4000, () => {
-    console.log('JSON Server is running')
+
+const PORT = process.env.PORT || 4000;
+
+server.listen(PORT, () => {
+    console.log(`Json server is running on port ${PORT}`)
 })
 
 // Export the Server API
